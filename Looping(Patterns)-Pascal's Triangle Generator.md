@@ -48,5 +48,3 @@ for i in range(1, rows+1):
 
 ## Result
 Thus,the Python program that generates Pascal's Triangle using numbers. The number of rows is accepted from the user is created successfully.
-## Result
-
