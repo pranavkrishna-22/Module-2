@@ -1,35 +1,50 @@
-## Loops in Python: Palindrome Number Checker
+# Looping(Patterns)-Pascal's Triangle Generator in Python
+
+This project demonstrates a simple Python program to generate **Pascal’s Triangle**, where the number of rows is provided by the user.
+
+---
 
 ##  Aim
-To write a Python program that checks whether a given number is a **palindrome** using loops.
+
+To write a Python program that generates **Pascal's Triangle** using numbers. The number of rows is accepted from the user.
+
+---
 
 ##  Algorithm
-1. Get input from the user and assign it to a variable `num`.
-2. Assign the value of `num` to a temporary variable `temp`.
-3. Initialize a variable `rev` to 0 (used to store the reversed number).
-4. Use a `while` loop to reverse the digits:
-   - While `temp > 0`:
-     - `rev = (10 * rev) + temp % 10`
-     - `temp = temp // 10`
-5. After the loop, compare `rev` with `num`:
-   - If equal, print that the number is a palindrome.
-   - Else, print that it is not a palindrome.
+
+1. Start the program.
+2. Input the number of rows from the user.
+3. Loop from 0 to the number of rows.
+4. For each row:
+   - Print appropriate spaces to shape the triangle.
+   - Compute values using the formula:  
+     \[
+     C(n, k) = \frac{n!}{k!(n-k)!}
+     \]
+5. Print all rows of Pascal’s Triangle.
+6. End the program.
+
+---
 
 ##  Program
 ```
-num=int(input())
-rev=0
-temp=num
-while temp>0:
-    rev=(10*rev)+temp%10
-    temp//=10
-if rev==num:
-    print("The given number {} is a Palindrome".format(num))
-else:
-    print("The given number {} is not a palindrome".format(num))
+rows = int(input())
+coef = 1
+
+for i in range(1, rows+1):
+    for space in range(1, rows-i+1):
+        print(" ",end="")
+    for j in range(0, i):
+        if j==0 or i==0:
+            coef = 1
+        else:
+            coef = coef * (i - j)//j
+        print(coef, end = " ")
+    print()
 ```
+
 ## Output
-<img width="1094" height="264" alt="image" src="https://github.com/user-attachments/assets/de69c75d-710d-4c30-bbd3-1bf247cf3694" />
+<img width="703" height="769" alt="image" src="https://github.com/user-attachments/assets/7a10dbe9-033a-4fa7-8c79-e848222f3399" />
 
 ## Result
-Thus,the Python program that checks whether a given number is a palindrome using loops is created successfully.
+Thus,the Python program that generates Pascal's Triangle using numbers. The number of rows is accepted from the user is created successfully.
